@@ -18,4 +18,9 @@ public class VoitureService  implements IVoitureService {
     public List<Voiture> getVoituresParMarque(String nomMarque) {
         return voitureRepository.findByMarque(nomMarque);
     }
+
+    @Override
+    public List<Voiture> getVoitureParAnneeFabrication(int annee) {
+        return voitureRepository.findByAnneeFabrication(annee);
+    }
 }

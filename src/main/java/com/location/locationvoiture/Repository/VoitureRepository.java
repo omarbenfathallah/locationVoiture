@@ -8,4 +8,5 @@ import java.util.List;
 @Repository
 public interface VoitureRepository  extends JpaRepository<Voiture, Long> {
     List<Voiture> findByMarque(String marque);
+    List<Voiture> findByAnneeFabrication(int i);
 }
