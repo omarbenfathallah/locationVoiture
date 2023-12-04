@@ -1,9 +1,10 @@
 package com.location.locationvoiture.Entity;
 
+import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-
+@Entity
 public class Voiture {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -14,7 +15,6 @@ public class Voiture {
     private int anneeFabrication;
 
     // Getters and setters
-
 
     public Long getId() {
         return id;
@@ -48,4 +48,13 @@ public class Voiture {
         this.anneeFabrication = anneeFabrication;
     }
 
+    public Voiture() {
+    }
+
+    public Voiture(Long id, String marque, String modele, int anneeFabrication) {
+        this.id = id;
+        this.marque = marque;
+        this.modele = modele;
+        this.anneeFabrication = anneeFabrication;
+    }
 }
