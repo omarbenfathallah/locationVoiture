@@ -22,4 +22,14 @@ public class VoitureController {
     public List<Voiture> getVoituresParMarque(@RequestParam String nomMarque) {
         return voitureService.getVoituresParMarque(nomMarque);
     }
+
+    @GetMapping("/voituresParMarque")
+    public List<Voiture> getVoituresParAnnee(@RequestParam int annee) {
+        return voitureService.getVoitureParAnneeFabrication(annee);
+    }
+
+    @GetMapping("/voituresParMarque")
+    public List<Voiture> getVoituresParModle(@RequestParam String model) {
+        return voitureService.getVoituresParMarque(model);
+    }
 }

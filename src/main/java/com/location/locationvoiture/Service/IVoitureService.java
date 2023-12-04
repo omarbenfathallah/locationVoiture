@@ -9,4 +9,7 @@ public interface IVoitureService {
     List<Voiture> getVoituresParMarque(String nomMarque);
 
     List<Voiture> getVoitureParAnneeFabrication(int  annee);
+
+    List<Voiture> getVoitureByModel(String Model);
+
 }

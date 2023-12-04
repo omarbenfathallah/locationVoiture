@@ -9,4 +9,6 @@ import java.util.List;
 public interface VoitureRepository  extends JpaRepository<Voiture, Long> {
     List<Voiture> findByMarque(String marque);
     List<Voiture> findByAnneeFabrication(int i);
+
+    List<Voiture> findByModele(String model);
 }
