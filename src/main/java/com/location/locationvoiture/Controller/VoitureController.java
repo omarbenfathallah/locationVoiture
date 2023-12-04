@@ -4,10 +4,7 @@ import com.location.locationvoiture.Entity.Voiture;
 import com.location.locationvoiture.Service.IVoitureService;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -18,18 +15,18 @@ public class VoitureController {
     @Autowired
     private IVoitureService voitureService;
 
-    @GetMapping("/voituresParMarque")
-    public List<Voiture> getVoituresParMarque(@RequestParam String nomMarque) {
+    @GetMapping("/voituresParMarque/{nomMarque}")
+    public List<Voiture> getVoituresParMarque(@PathVariable String nomMarque) {
         return voitureService.getVoituresParMarque(nomMarque);
     }
 
-    @GetMapping("/annee")
-    public List<Voiture> getVoituresParAnnee(@RequestParam int annee) {
+    @GetMapping("/annee/{annee}")
+    public List<Voiture> getVoituresParAnnee(@PathVariable int annee) {
         return voitureService.getVoitureParAnneeFabrication(annee);
     }
 
-    @GetMapping("/model")
-    public List<Voiture> getVoituresParModle(@RequestParam String model) {
+    @GetMapping("/model/{model}")
+    public List<Voiture> getVoituresParModle(@PathVariable String model) {
         return voitureService.getVoituresParMarque(model);
     }
 }
