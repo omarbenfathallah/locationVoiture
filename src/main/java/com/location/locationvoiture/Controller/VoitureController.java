@@ -3,7 +3,6 @@ package com.location.locationvoiture.Controller;
 import com.location.locationvoiture.Entity.Voiture;
 import com.location.locationvoiture.Service.IVoitureService;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -12,8 +11,11 @@ import java.util.List;
 @RequestMapping("/voiture")
 public class VoitureController {
 
-    @Autowired
-    private IVoitureService voitureService;
+    private final IVoitureService voitureService;
+
+    public VoitureController(IVoitureService voitureService) {
+        this.voitureService = voitureService;
+    }
 
     @GetMapping("/voituresParMarque/{nomMarque}")
     public List<Voiture> getVoituresParMarque(@PathVariable String nomMarque) {
